@@ -1,0 +1,100 @@
+
+::-moz-selection { background: #1ed3a6; }
+::-webkit-selection { background: #1ed3a6; }
+::selection { background: #1ed3a6; }
+
+
+a,
+.loader,
+.subheading,
+blockquote > p > a:hover,
+.bullets li:before,
+.arrows i,
+.checks i,
+.entry__title:hover a,
+.entry__meta li a:hover,
+.project__info__meta > li a:hover,
+.accordion-panel__heading > a.minus,
+.from-blog__entry__title a:hover,
+.project__title:hover a,
+.project__category:hover a,
+.project-filter a.active,
+.project-filter a:hover,
+.project-filter a:focus,
+.owl-next:hover i,
+.owl-prev:hover i,
+.flexslider .flex-direction-nav .flex-nav-next:hover a,
+.flexslider .flex-direction-nav .flex-nav-prev:hover a,
+.socials--nobase a:hover i,
+.tabs__item.active .tabs__link,
+.feature__icon,
+.feature-tabs .tabs__item.active .feature-tabs__link,
+.feature-tabs .tabs__item.active .feature-tabs__icon,
+.feature-tabs .feature-tabs__link:hover,
+.feature-tabs .feature-tabs__link:hover i,
+.feature-tabs .feature-tabs__link:focus,
+.feature-tabs .feature-tabs__link:focus i,
+.nav__menu > li > a:hover,
+.nav__dropdown-menu > li > a:hover,
+.nav__dropdown-submenu > .nav__dropdown-menu > li > a:hover,
+.nav__search-trigger:hover,
+.nav__search-trigger:focus,
+.nav--dark .nav__menu > li > a:hover,
+.sidebar .widget ul li a:hover {
+  color: #1ed3a6;
+}
+
+.nav__menu > .active > a {
+  color: #1ed3a6 !important;
+}
+
+
+.dropcap-1,
+.highlight,
+.pagination__page:hover,
+.owl-custom-navigation a:hover,
+.accordion-panel__heading a:hover,
+.accordion-panel__heading > a > span,
+.btn-color,
+.btn-stroke:hover,
+.btn-dark:hover,
+.btn-white:hover,
+.btn-white:hover,
+.btn-light:hover,
+.btn-transparent:hover,
+.call-to-action-1:hover,
+.project__icons a:hover,
+.progress__bar,
+.owl-page.active span,
+.tabs__link:hover,
+.feature-3__icon-holder,
+.hi-icon:after,
+.nav__icon-toggle:focus .nav__icon-toggle-bar,
+.nav__icon-toggle:hover .nav__icon-toggle-bar,
+.nav__holder.scrolling .nav__btn-holder .btn--transparent,
+#back-to-top:hover,
+.widget__tags a:hover {
+  background-color: #1ed3a6;
+}
+
+@media only screen and (max-width: 991px) {
+  .nav__btn-holder .btn--transparent {
+    background-color: #1ed3a6;
+  }
+}
+
+
+.hi-icon {
+  box-shadow: 0 0 0 4px #1ed3a6;
+}
+
+.nav__dropdown-menu,
+.nav__dropdown-submenu > .nav__dropdown-menu {
+  border-top-color: #1ed3a6;
+}
+
+.nav__dropdown-menu > li > a:after,
+.nav__dropdown-submenu > .nav__dropdown-menu > li > a:after,
+.blockquote-1 {
+  border-color: #1ed3a6;
+}

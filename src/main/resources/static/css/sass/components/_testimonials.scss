@@ -1,0 +1,28 @@
+/*-------------------------------------------------------*/
+/* Testimonials
+/*-------------------------------------------------------*/
+
+.testimonial {
+
+  &__text {    
+    font-size: 18px;
+    line-height: 34px;
+    margin-bottom: 20px;
+    font-family: $heading-font;
+    cursor: move;
+    cursor: -webkit-grab;
+    cursor: -o-grab;
+    cursor: -ms-grab;
+    cursor: grab;
+  }
+
+  &__author {
+    display: block;
+    font-size: 11px;
+    font-family: $heading-font;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 0.025em;
+  }
+
+}

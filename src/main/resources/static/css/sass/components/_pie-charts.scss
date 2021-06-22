@@ -1,0 +1,32 @@
+/*-------------------------------------------------------*/
+/* Pie Charts
+/*-------------------------------------------------------*/
+
+.chart {
+  position: relative;
+  display: inline-block;
+  width: 180px;
+  height: 180px;
+  text-align: center;
+}
+
+.chart canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.percent {
+  display: inline-block;
+  line-height: 180px;
+  z-index: 2;
+  font-size: 32px;
+  font-family: $heading-font;
+  color: $heading-color;
+}
+
+.percent:after {
+  content: '%';
+  margin-left: 0.1em;
+  font-size: .9em;
+}

@@ -1,0 +1,115 @@
+@import "base/_variables";
+@import "base/_mixins";
+
+/* Uncomment if you need other styles for arrows and bullets */
+// @import url(../revolution/css/navigation.css);
+// @import url(../revolution/css/layers.css);
+
+iframe {border: 0;}
+
+/*---------------------------------------------------------------
+ Hermes Arrows
+---------------------------------------------------------------*/
+.hermes.tparrows{cursor:pointer;background:#000;background:rgba(0,0,0,.5);width:30px;height:110px;position:absolute;display:block;z-index:1000}.hermes.tparrows:before{font-family:revicons;font-size:15px;color:#fff;display:block;line-height:110px;text-align:center;transform:translateX(0);-webkit-transform:translateX(0);transition:all .3s;-webkit-transition:all .3s}.hermes.tparrows.tp-leftarrow:before{content:"\e824"}.hermes.tparrows.tp-rightarrow:before{content:"\e825"}.hermes.tparrows.tp-leftarrow:hover:before{transform:translateX(-20px);-webkit-transform:translateX(-20px);opacity:0}.hermes.tparrows.tp-rightarrow:hover:before{transform:translateX(20px);-webkit-transform:translateX(20px);opacity:0}.hermes .tp-arr-allwrapper{overflow:hidden;position:absolute;width:180px;height:140px;top:0;left:0;visibility:hidden;-webkit-transition:-webkit-transform .3s .3s;transition:transform .3s .3s;-webkit-perspective:1000px;perspective:1000px}.hermes.tp-rightarrow .tp-arr-allwrapper{right:0;left:auto}.hermes.tparrows:hover .tp-arr-allwrapper{visibility:visible}.hermes .tp-arr-imgholder{width:180px;position:absolute;left:0;top:0;height:110px;transform:translateX(-180px);-webkit-transform:translateX(-180px);transition:all .3s;transition-delay:.3s}.hermes.tp-rightarrow .tp-arr-imgholder{transform:translateX(180px);-webkit-transform:translateX(180px)}.hermes.tparrows:hover .tp-arr-imgholder{transform:translateX(0);-webkit-transform:translateX(0)}.hermes .tp-arr-titleholder{top:110px;width:180px;text-align:left;display:block;padding:0 10px;line-height:30px;background:#000;background:rgba(0,0,0,.75);color:#fff;font-weight:600;position:absolute;font-size:12px;white-space:nowrap;letter-spacing:1px;-webkit-transition:all .3s;transition:all .3s;-webkit-transform:rotateX(-90deg);transform:rotateX(-90deg);-webkit-transform-origin:50% 0;transform-origin:50% 0;box-sizing:border-box}.hermes.tparrows:hover .tp-arr-titleholder{-webkit-transition-delay:.6s;transition-delay:.6s;-webkit-transform:rotateX(0);transform:rotateX(0)}
+
+
+/*---------------------------------------------------------------
+ Uranus Arrows
+---------------------------------------------------------------*/
+.uranus.tparrows{width:50px;height:50px;background:0 0}.uranus.tparrows:before{width:50px;height:50px;line-height:50px;font-size:40px;transition:all .3s;-webkit-transition:all .3s}.uranus.tparrows:hover:before{opacity:.75}
+
+
+
+/* Bullets
+-------------------------------------------------------*/
+.tp-bullet {
+  background: rgba(255, 255, 255, 0);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  width: 12px !important;
+  height: 12px !important;
+  border: 2px solid rgba(255, 255, 255, 0.7) !important;
+  display: inline-block;
+  -webkit-transition: background-color 0.2s, border-color 0.2s;
+  -moz-transition: background-color 0.2s, border-color 0.2s;
+  -o-transition: background-color 0.2s, border-color 0.2s;
+  -ms-transition: background-color 0.2s, border-color 0.2s;
+  transition: background-color 0.2s, border-color 0.2s;
+  float:none !important;
+}
+
+
+.tp-bullet.selected,
+.tp-bullet:hover {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-color: #fff;
+  width: 12px !important;
+  height: 12px !important;
+  border: 2px solid rgba(0, 0, 0, 0) !important;
+}
+
+
+/* Onepage Slides
+-------------------------------------------------------*/
+
+.tp-caption.hero-text {
+  color: #fff;
+  text-shadow: none;
+  font-weight: 700;
+  line-height: 60px;
+  font-family: $heading-font;
+  letter-spacing: 0.02em;
+  margin: 0px;
+  border-width: 0px;
+  border-style: none;
+  white-space: nowrap;
+  padding: 0px 4px;
+  padding-top: 1px;
+  text-transform: uppercase;
+}
+
+.tp-caption.medium-text {
+  color: #fff;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  font-family: $heading-font;
+  letter-spacing: 0.1em;
+  margin: 0px;
+  text-transform: uppercase;
+  border-width: 0px;
+  border-style: none;
+  white-space: nowrap;
+  text-shadow: none;
+}
+
+.tp-caption.alt-font { font-family: $alt-font; }
+
+.tp-caption.nocaps {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.tp-caption span.dot { color: #f37b21; }
+.tp-caption span.color { color: #ffb30f; }
+
+.tp-caption.small-text {
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: $heading-font;
+  margin: 0px;
+  border-width: 0px;
+  border-style: none;
+  white-space: nowrap;
+  text-shadow: none;
+}

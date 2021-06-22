@@ -1,0 +1,40 @@
+/*-------------------------------------------------------*/
+/* Team
+/*-------------------------------------------------------*/
+
+.team {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  &__img {
+    @include transition(all .2s linear);
+  }
+
+  &__details {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    padding: 30px;
+    overflow: hidden;
+    width: 100%;
+    z-index: 2;
+    @include transition(all .2s linear);
+  }
+
+  &__position {
+    font-size: 13px;
+    color: #9e9e9e;
+    font-style: italic;
+  }
+
+  &:hover .team__details {
+    opacity: 1;
+    margin-top: -71px;
+  }
+
+  &:hover .team__img {
+    opacity: 0.1;
+  }  
+}

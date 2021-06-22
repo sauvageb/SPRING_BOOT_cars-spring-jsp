@@ -1,0 +1,54 @@
+/*-------------------------------------------------------*/
+/* Helper Classes
+/*-------------------------------------------------------*/
+
+.box-shadow {
+  box-shadow: 0px 1px 1px rgba(72, 78, 85, 0.10);
+  @include transition (all 0.2s ease-out);
+
+  &:hover {
+    box-shadow: 0 20px 40px rgba(72, 78, 85, 0.10);
+    @include transform(translateY(-15px));
+  }
+}
+
+.hover-scale {
+  img {
+    @include transition(all 2s ease-out);
+  }
+
+  &:hover img {
+    -webkit-transform: scale(1.5,1.5);
+    -moz-transform: scale(1.5,1.5);
+    -ms-transform: scale(1.5,1.5);
+    -o-transform: scale(1.5,1.5);
+    transform: scale(1.5,1.5);
+  }
+}
+
+
+.hover-fade {
+
+  img {
+    @include transition(opacity .3s ease-in-out);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: relative;
+  }
+
+  &:hover img {
+    opacity: .8;
+  }
+}
+
+
+/* Section Dividers
+-------------------------------------------------------*/
+.top-divider {
+  border-top: 1px solid $border-color;
+}
+
+.bottom-divider {
+  border-bottom: 1px solid $border-color;
+}

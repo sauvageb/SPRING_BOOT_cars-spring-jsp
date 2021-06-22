@@ -1,0 +1,48 @@
+/*-------------------------------------------------------*/
+/* Alert Boxes
+/*-------------------------------------------------------*/
+
+.alert {
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+
+  strong {
+    color: inherit;
+  }
+}
+
+.alert-dismissible .close {
+  right: 0;
+  top: 0;
+  color: inherit;
+  position: relative;
+}
+
+.close {
+  opacity: 1;
+  text-shadow: none;
+  font-weight: normal;
+  float: right;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+.modal-header .close {
+  font-size: 25px;
+  margin-top: 2px !important;
+}
+
+.alert-success { background-color: #1ed3a6; }
+.alert-info { background-color: #14b8ee; }
+.alert-warning { background-color: #ee9e13; }
+.alert-danger { background-color: #f34937; }

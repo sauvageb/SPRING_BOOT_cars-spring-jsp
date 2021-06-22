@@ -1,0 +1,77 @@
+/*-------------------------------------------------------*/
+/* Page Title
+/*-------------------------------------------------------*/
+
+.page-title {
+  position: relative;
+  background-position: center center;
+  width: 100%;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+
+  .container {
+    height: 340px;
+
+    @include bp-md-down {
+      height: auto;
+      padding: 50px 0;
+    }
+  }
+
+  &__outer {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__inner {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-size: 48px;
+    line-height: 1.2;
+
+    @include bp-md-down {
+      font-size: 34px;
+    }
+  }
+
+  .breadcrumb {
+    width: auto;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+  }
+
+  .breadcrumb li {
+    display: inline-block;
+  }
+
+  .breadcrumb a {
+    color: #969ca7;
+  }
+
+  .breadcrumb a:hover {
+    color: #0ccfa8;
+  }
+
+  .breadcrumb a,
+  .breadcrumb > .active {
+    color: #fff;
+  }
+
+  .breadcrumb>li+li:before {
+    color: #fff;
+    opacity: 0.5;
+    padding: 0 5px;
+    content: "/\00a0";
+  }
+}

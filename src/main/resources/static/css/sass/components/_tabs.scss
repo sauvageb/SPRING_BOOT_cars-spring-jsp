@@ -1,0 +1,79 @@
+/*-------------------------------------------------------*/
+/* Tabs
+/*-------------------------------------------------------*/
+
+.tabs {
+
+  &__list {
+    margin-bottom: -1px;
+  }
+
+  &__item {
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    font-family: $heading-font;
+    color: $heading-color;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    @include bp-xs-down {
+      display: block;
+      margin-right: 0;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__link {
+    border-radius: 3px 3px 0 0;
+    display: block;
+    position: relative;
+    padding: 11px 20px 10px;
+    background-color: $bg-light;
+    border: 1px solid $border-color;
+    color: inherit;
+    @include transition(all .1s ease-in-out);
+
+    &:focus {
+      color: inherit;
+    }
+
+    &:hover {
+      background-color: $main-color;
+      border-color: transparent;
+      color: #fff;
+    }
+
+    @include bp-xs-down {
+      border-radius: 3px;
+    }
+  }
+
+  &__item.active .tabs__link {
+    background-color: #fff;
+    color: $main-color;
+    border: 1px solid $border-color;
+    border-bottom: 1px solid transparent;
+    cursor: default;
+
+    @include bp-xs-down {
+      border: 1px solid $border-color;
+    }
+  }
+}
+
+.tabs__content {
+  overflow: hidden;
+  padding: 20px;
+  border: 1px solid $border-color;
+  border-radius: 0 0 3px 3px;
+
+  &__pane {
+    display: none;
+  }
+
+  &__pane.active {
+    display: block;
+  }
+}

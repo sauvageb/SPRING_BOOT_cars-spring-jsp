@@ -1,0 +1,53 @@
+/*-------------------------------------------------------*/
+/* Results
+/*-------------------------------------------------------*/
+
+.counter {
+  &__timer {
+    display: block;
+    font-size: 44px;
+    margin-bottom: 5px;
+    font-family: $heading-font;
+  }
+
+  &__timer--1 {
+    font-size: 57px;
+    line-height: 1.2;
+  }
+
+  &__text {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+    font-family: $heading-font;
+  }
+
+  &__text--1 {
+    font-size: 16px;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 400;
+  }
+}
+
+
+/* Result Boxes
+-------------------------------------------------------*/
+.result-box {
+  padding: 135px 30px;
+  text-align: center;
+  color: #fff;
+
+  &--first {
+    background-color: #393a42;
+  }
+
+  &--second {
+    background-color: #31323a; 
+  }
+
+  &--third {
+    background-color: #292a32; 
+  }
+}

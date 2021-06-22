@@ -1,0 +1,197 @@
+/*-------------------------------------------------------*/
+/* Grid
+/*-------------------------------------------------------*/
+
+.section-wrap {
+  padding: 120px 0;
+  overflow: hidden;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  .mobile & {
+    background-position: 50% 50% !important;
+    background-attachment: scroll !important;
+  }
+
+  &--sm {
+    padding: 100px 0;
+  }
+
+  &--md {
+    padding: 170px 0;
+  }
+
+  &--lg {
+    padding: 220px 0;
+  }
+
+  @include bp-md-down {
+    padding: 90px 0;
+  }
+
+  @include bp-sm-down {
+    padding: 80px 0;
+  }
+}
+
+.container-semi-fluid {
+  padding: 0 50px;
+
+  @include bp-md-down {
+    padding: 0 15px;
+  }
+}
+
+.container-1600 {
+  max-width: 1600px;
+}
+
+
+/* Row multiple items
+-------------------------------------------------------*/
+
+// clear the first in row for any block that has the class "items-grid"
+.items-grid .col-xs-6:nth-child(2n + 3) { clear: left; }
+.items-grid .col-xs-4:nth-child(3n + 4) { clear: left; }
+.items-grid .col-xs-3:nth-child(4n + 5) { clear: left; }
+.items-grid .col-xs-2:nth-child(6n + 7) { clear: left; }
+.items-grid .col-xs-1:nth-child(12n + 13) { clear: left; }
+@media (min-width: 768px) {
+  // reset previous grid
+  .items-grid .col-xs-6:nth-child(2n + 3) { clear: none; }
+  .items-grid .col-xs-4:nth-child(3n + 4) { clear: none; }
+  .items-grid .col-xs-3:nth-child(4n + 5) { clear: none; }
+  .items-grid .col-xs-2:nth-child(6n + 7) { clear: none; }
+  .items-grid .col-xs-1:nth-child(12n + 13) { clear: none; }
+
+  // clear first in row for small columns
+  .items-grid .col-sm-6:nth-child(2n + 3) { clear: left; }
+  .items-grid .col-sm-4:nth-child(3n + 4) { clear: left; }
+  .items-grid .col-sm-3:nth-child(4n + 5) { clear: left; }
+  .items-grid .col-sm-2:nth-child(6n + 7) { clear: left; }
+  .items-grid .col-sm-1:nth-child(12n + 13) { clear: left; }
+}
+@media (min-width: 992px) {
+  // reset previous grid
+  .items-grid .col-sm-6:nth-child(2n + 3) { clear: none; }
+  .items-grid .col-sm-4:nth-child(3n + 4) { clear: none; }
+  .items-grid .col-sm-3:nth-child(4n + 5) { clear: none; }
+  .items-grid .col-sm-2:nth-child(6n + 7) { clear: none; }
+  .items-grid .col-sm-1:nth-child(12n + 13) { clear: none; }
+
+  // clear first in row for medium columns
+  .items-grid .col-md-6:nth-child(2n + 3) { clear: left; }
+  .items-grid .col-md-4:nth-child(3n + 4) { clear: left; }
+  .items-grid .col-md-3:nth-child(4n + 5) { clear: left; }
+  .items-grid .col-md-2:nth-child(6n + 7) { clear: left; }
+  .items-grid .col-md-1:nth-child(12n + 13) { clear: left; }
+}
+@media (min-width: 1200px) {
+  // reset previous grid
+  .items-grid .col-md-6:nth-child(2n + 3) { clear: none; }
+  .items-grid .col-md-4:nth-child(3n + 4) { clear: none; }
+  .items-grid .col-md-3:nth-child(4n + 5) { clear: none; }
+  .items-grid .col-md-2:nth-child(6n + 7) { clear: none; }
+  .items-grid .col-md-1:nth-child(12n + 13) { clear: none; }
+
+  // clear first in row for large columns
+  .items-grid .col-lg-6:nth-child(2n + 3) { clear: left; }
+  .items-grid .col-lg-4:nth-child(3n + 4) { clear: left; }
+  .items-grid .col-lg-3:nth-child(4n + 5) { clear: left; }
+  .items-grid .col-lg-2:nth-child(6n + 7) { clear: left; }
+  .items-grid .col-lg-1:nth-child(12n + 13) { clear: left; }
+}
+
+
+/* 5 columns
+-------------------------------------------------------*/
+
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+  position: relative;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.col-xs-5ths {
+  width: 20%;
+  float: left;
+}
+
+@media (min-width: 768px) {
+  .col-sm-5ths {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-md-5ths {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 1400px) {
+  .col-lg-5ths {
+    width: 20%;
+    float: left;
+  }
+}
+
+
+
+/* Flexbox
+-------------------------------------------------------*/
+
+.flex-parent {
+  @include display-flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  // align-items: center;
+  justify-content: space-between;
+}
+
+.flex-child {
+  @include flex (1 0 0);
+}
+
+
+/* Columns With No Gutters
+-------------------------------------------------------*/
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+
+/* Columns XXS
+-------------------------------------------------------*/
+@media (max-width: 639px) {
+
+  .col-xxs-12 {
+    width: 100%;
+  }
+
+  .col-xxs-6 {
+    width: 50%;
+
+    &:nth-child(2n + 3) {
+      clear: left;
+    }
+  }
+}

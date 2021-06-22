@@ -1,0 +1,142 @@
+/*-------------------------------------------------------*/
+/* Sidebar
+/*-------------------------------------------------------*/
+
+.sidebar {
+
+  .widget {
+    margin-top: 50px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .widget ul li {
+    border-bottom: 1px solid $border-color;
+    position: relative;
+  }
+
+  .widget ul li:last-child {
+    border-bottom: none;
+  }
+
+  .widget ul li a {
+    color: #a7a7a7;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+
+  .widget__title {
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+
+}
+
+
+/* Search
+-------------------------------------------------------*/
+
+.widget__search {
+
+  &__input {
+    border: 1px solid $border-color;
+    margin-bottom: 0;
+    background-color: #fff;
+  }
+
+  &__button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+
+    i {
+      width: 14px;
+      font-size: 13px;
+
+      &:hover {
+        color: $heading-color;
+      }
+    }
+  }
+}
+
+
+/* Categories
+-------------------------------------------------------*/
+
+.widget__categories li {
+  padding: 10px 0;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.widget__categories li a:after {
+  font-family: "FontAwesome";
+  position: absolute;
+  content: "\f105";
+  right: 0;
+  color: #a7a7a7;
+}
+
+
+.widget__categories ul li.active a {
+  color: $heading-color;
+}
+
+
+
+/* Latest Posts
+-------------------------------------------------------*/
+
+.widget__recent-posts {
+  &__list > li {
+    padding: 20px 0;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &__entry__meta {
+    margin: 0;
+  }
+}
+
+
+
+/* Tags
+-------------------------------------------------------*/
+
+.widget__tags a {
+  background-color: #fff;
+  padding: 11px 17px;
+  line-height: 1;
+  border-radius: 3px;
+  margin: 0 6px 6px 0;
+  font-size: 13px;
+  color: #a7a7a7;
+  display: inline-block;
+  float: left;
+  @include transition($all);
+
+  &:hover {
+    background-color: $main-color;
+    color: #fff !important;
+  }
+}

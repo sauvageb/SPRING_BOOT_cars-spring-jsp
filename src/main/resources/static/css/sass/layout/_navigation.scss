@@ -1,0 +1,661 @@
+/*-------------------------------------------------------*/
+/* Navigation
+/*-------------------------------------------------------*/
+
+.nav {
+  min-height: $nav-short-height;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 120;
+  position: relative;
+  @include transition(height .3s ease-in-out);
+
+  @include bp-md-up {
+    height: $nav-full-height;
+
+    .nav.sticky {
+      height: $nav-short-height;
+    }
+  }
+
+  &__menu,
+  &__dropdown-menu {
+    list-style: none;
+  }
+
+  &__menu {
+    position: relative;
+    @include display-inline-flex;
+    align-items: center;
+
+    & > li {
+      position: relative;      
+    }
+
+    & > li > a {
+      font-family: $heading-font;
+      font-weight: 700;
+      color: $nav-color;
+      font-size: 13px;
+      padding: 0 17px;
+      line-height: $nav-full-height;
+      display: block;
+      position: relative;
+      @include transition($all);
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+
+    & > .active > a {
+      color: $main-color !important;
+    }
+
+    & > li:last-child > a {
+      padding-right: 0;
+    }
+  }
+
+
+  /* Dropdowns (large screen) */
+  @include bp-md-up {
+
+    &__wrap {
+      display: block !important;
+      height: auto !important;
+    }
+
+    &__wrap--text-center {
+      text-align: center;
+    }
+
+    &__menu > li {
+      display: inline-block;
+      text-align: center;
+    }
+
+    &__dropdown-menu,
+    &__dropdown-submenu > .nav__dropdown-menu {
+      position: absolute;
+      top: 100%;
+      z-index: 1000;
+      min-width: 200px;
+      width: 100%;
+      text-align: left;
+      padding: 10px 0;
+      list-style: none;
+      white-space: nowrap;
+      background-color: $bg-dark;
+      box-shadow: 0 2px 4px rgba(0,0,0,.05);
+      border-radius: 0;
+      border-top: 3px solid $main-color;
+      border-left: 1px solid #ebebeb;
+      border-right: 1px solid #ebebeb;
+      border-bottom: none;
+      background-color: #fff;
+      -webkit-background-clip: padding-box;
+      background-clip: padding-box;
+      display: block;
+      visibility: hidden;
+      opacity: 0;
+      @include transition (all .1s ease-in-out);
+
+
+      > li > a {
+        color: $text-color;
+        padding: 7px 20px;
+        font-size: 14px;
+        display: block;
+        font-weight: 500;
+        @include transition($all);
+
+        &:hover {
+          color: $main-color;
+        }
+      }
+
+      > li > a:after {
+        content: "";
+        display: block;
+        margin-top: 5px;
+        border-bottom: 2px solid $main-color;
+        width: 0;
+        @include transition (width 0.3s linear);
+
+        .mobile & {
+          display: none;
+        }
+      }
+
+      > li > a:hover:after {
+        width: 100%;
+      }
+
+    }
+
+    &__dropdown-menu.hide-dropdown {
+      visibility: hidden !important;
+      opacity: 0 !important;
+    }
+
+    &__dropdown-menu--right {
+      right: 0;
+    }
+
+    &__dropdown:hover > .nav__dropdown-menu,
+    &__dropdown-submenu:hover > .nav__dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &__dropdown-submenu {
+      position: relative;
+
+      .nav__dropdown-menu {
+        left: 100%;
+        top: -20px;
+      }
+
+      & > a:after {
+        font-family: "Themify";
+        position: absolute;
+        content: "\e649";
+        font-size: 8px;
+        right: 20px;
+        line-height: 21px;
+        color: $text-color;
+      }
+    }
+
+    &__dropdown-trigger {
+      display: none;
+    }
+  }
+}
+
+.mobile body {
+  cursor: pointer;
+}
+
+
+/* Logo
+-------------------------------------------------------*/
+
+.logo {
+  max-height: 21px;
+  position: relative;
+  top: -2px;
+}
+
+.logo__link {
+  height: $nav-full-height;
+  @include display-flex;
+  align-items: center;
+  @include transition(height .3s ease-in-out);
+}
+
+.logo--left {
+  justify-content: flex-start;
+}
+
+
+/* Nav Flexbox
+-------------------------------------------------------*/
+
+header .flex-parent {
+  align-items: center;
+
+  @include bp-md-down {
+    display: block;
+  }
+}
+
+header .flex-child {
+  flex: 1 0 0;
+
+  @include bp-md-down { 
+    width: 100%;
+  }
+}
+
+header .flex-child.flex-right {
+  text-align: right;
+}
+
+.nav--align-right {
+  margin-left: auto;
+}
+
+.nav--align-left {
+  margin-right: auto;
+
+  @include bp-md-up {
+    margin-left: 60px;
+  }  
+}
+
+.nav--align-center {
+  .nav__header {
+    flex: 1 0 0;
+  }
+
+  .nav__wrap {
+    flex: 4 0 0;
+    text-align: center;
+  }
+}
+
+
+/* Nav Search
+-------------------------------------------------------*/
+
+.nav__search {
+  padding-left: 13px;
+
+  &-trigger {
+    position: relative;
+    display: block;
+    color: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    color: $nav-color;
+    @include transition($all);
+
+    &:hover,
+    &:focus {
+      color: $main-color;
+    }
+  }
+
+  &-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 23;
+    background-color: #fff;
+  }
+
+  &-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-cell {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+  }
+
+  &-field-holder {
+    width: 50%;
+    margin: auto;
+    position: relative;
+    animation: slideInUp .3s;
+  }
+
+  &-input[type] {
+    height: 100%;
+    border: none;
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+
+  &.open .nav__search-close {
+    opacity: 1;
+  }
+
+  &-close {
+    position: absolute;
+    top: 50%;
+    margin-top: -9px;
+    right: 15px;
+    font-size: 16px;
+    color: $text-color;
+    cursor: pointer;
+  }
+}
+
+
+/* Mobile Search */
+.nav__search-mobile-input {
+  height: 50px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 0;
+  color: $nav-color;
+
+  &:focus {
+    background-color: transparent;
+  }
+}
+
+.nav__search-mobile-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  padding-left: 26px;
+  border: 0;
+  font-size: 13px;
+  cursor: pointer;
+  color: $text-color;
+  background-color: transparent;
+}
+
+
+/* Nav Socials
+-------------------------------------------------------*/
+.nav__social-icons {
+  a {
+    font-size: 17px;
+    color: #fff;
+    width: 16px;
+    float: left;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+}
+
+.nav__mobile-social-icons {
+  padding: 15px 0;
+
+  a {
+    margin: 0 10px;
+  }
+}
+
+
+
+/* Nav Icon Toggle (mobile nav)
+-------------------------------------------------------*/
+
+.nav__icon-toggle {
+  position: relative;
+  top: 14px;
+  float: right;
+  padding: 9px 0 9px 10px;
+  background-color: transparent;
+  border: none;
+  z-index: 50;
+
+  @include bp-md-up {
+    display: none;
+  }
+
+  &-bar {
+    background-color: $bg-dark;
+    width: 18px;
+    display: block;
+    height: 2px;
+    border-radius: 1px;
+    margin-bottom: 4px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &:focus .nav__icon-toggle-bar,
+  &:hover .nav__icon-toggle-bar {
+    background-color: $main-color;
+  }
+}
+
+
+/* Sticky Nav
+-------------------------------------------------------*/
+
+@include bp-md-up {
+
+  .nav--sticky {
+    background-color: #fff;
+    position: fixed;
+    height: $nav-full-height;
+    left: 0;
+    right: 0;
+    top: 0;
+    @include transition($all);
+
+    &.sticky {
+      box-shadow: 0 0 5px rgba(0,0,0,.1);
+      z-index: 120;
+      height: $nav-short-height;
+
+      .nav__menu > li > a {
+        line-height: $nav-short-height;
+      }
+
+      .logo-wrap a {
+        height: $nav-short-height;
+      }
+    }
+  }
+
+  .nav.sticky {
+    height: $nav-short-height;
+  }
+}
+
+.nav--always-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+
+
+/* Nav Dark
+-------------------------------------------------------*/
+@include bp-md-up {
+  .nav--dark {    
+
+    .logo--dark {
+      display: none;
+    }
+
+    .nav__menu > li > a {
+      color: #fff;
+    }
+
+    .nav__menu > li > a:hover {
+      color: $main-color;
+    }
+
+    .nav__holder {
+      background-color: rgba(0,0,0,.2);
+    }
+
+    .nav__holder.sticky {
+      background-color: rgba(17,17,17,1);
+    }
+  }  
+}
+
+
+
+/* Nav Button
+-------------------------------------------------------*/
+.nav__btn-holder {
+  display: inline-block;
+  padding-left: 30px;
+
+  .btn--transparent {
+    border-color: rgba(#fff,.55);
+
+    &:hover {
+      border-color: transparent;
+    }
+
+    .nav__holder.scrolling & {
+      background-color: $main-color;
+      border-color: transparent;
+    }
+  }
+
+  @include bp-md-down {
+    padding: 20px 0;
+
+    .btn--transparent {
+      background-color: $main-color;
+      border-color: transparent;
+      width: 100%;
+    }
+  }
+}
+
+
+
+/* Go to Top
+-------------------------------------------------------*/
+
+#back-to-top {
+  display: block;
+  z-index: 100;
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  font-size: 12px;
+  position: fixed;
+  bottom: -34px;
+  right: 20px;
+  line-height: 35px;
+  background-color: rgba( $heading-color, .3);
+  border-radius: 50%;
+  @include transition ($all);
+  text-decoration: none;
+
+  i {
+    @include transition ($all);
+  }
+
+  a {
+    display: block;
+    color: #fff;
+  }
+
+  &.show {
+    bottom: 20px;
+  }
+
+  &:hover {
+    background-color: $main-color;
+    bottom: 24px;
+  }
+
+  &:hover i {
+    color: #fff;
+  }
+}
+
+
+
+/*-------------------------------------------------------*/
+/* Nav Mobile Styles
+/*-------------------------------------------------------*/
+
+@include bp-md-down {
+
+  .nav {
+    min-height: $nav-short-height;
+
+    &__menu {
+      display: block;
+    }
+
+    &__menu li a {
+      padding: 0;
+      line-height: 50px;
+      height: 50px;
+      display: block;
+      font-size: 14px;         
+      border-bottom: 1px solid $border-color;
+    }
+
+    &__dropdown-menu a {
+      color: $text-color;
+
+      &:hover {
+        color: #000;
+      }
+    }
+
+    &__dropdown-menu > li > a {
+      padding-left: 10px;
+    }
+
+    &__dropdown-menu > li > ul > li > a {
+      padding-left: 20px;
+    }
+
+    &__dropdown-trigger {
+      display: block;
+      width: 20px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 50;
+      cursor: pointer;
+    }
+
+    &__dropdown-submenu {
+      position: relative;
+    }
+
+    &__dropdown-menu {
+      display: none;
+      width: 100% !important;
+    }
+
+    &__dropdown-trigger.active + .nav__dropdown-menu {
+      display: block;
+    }
+  }
+
+  .logo-wrap {
+    float: left;
+
+    a {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  .logo-wrap a,
+  .nav__social-icons .social-icons {
+    height: $nav-short-height;
+  }
+
+
+  // Dark
+  .nav--dark {
+    background-color: rgba(17,17,17,.9);
+
+    .logo--light {
+      display: inline-block;
+    }
+
+    .nav__menu li a {
+      color: #fff;
+      border-bottom: 1px solid #333;
+    }
+
+    .nav__icon-toggle-bar {
+      background-color: #fff;
+    }
+
+  }
+}

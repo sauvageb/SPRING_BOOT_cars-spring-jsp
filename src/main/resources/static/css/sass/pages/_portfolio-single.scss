@@ -1,0 +1,68 @@
+/*-------------------------------------------------------*/
+/* Portfolio Single
+/*-------------------------------------------------------*/
+
+.project__info {
+  padding-left: 10%;
+  
+  @include bp-md-down {
+    padding-left: 0;
+    margin-top: 40px;
+  }
+
+  &__title {
+    font-size: 22px;
+  }
+
+  &__text,
+  &__meta,
+  &__button {
+    margin-bottom: 30px;
+  }
+
+  &__meta > li {
+    line-height: 30px;
+    color: $text-color;
+  }
+
+  &__meta > li a {
+    color: $heading-color;
+
+    &:hover {
+      color: $main-color;
+    }
+  }  
+}
+
+
+/* Related Projects
+-------------------------------------------------------*/
+
+#owl-related-projects .project {
+  margin: auto 15px;
+}
+
+.owl-custom-navigation {
+
+  a {
+    background-color: #fff;
+    color: $heading-color;
+    display: inline-block;
+    width: 31px;
+    height: 31px;
+    line-height: 28px;
+    border-radius: 3px;
+    text-align: center;
+    padding: 0;
+    cursor: pointer;
+    font-size: 14px;
+    border: 1px solid #e6ebed;
+    @include transition ($all);
+
+    &:hover {
+      background-color: $main-color;
+      color: #fff;
+      border-color: transparent;
+    }
+  }  
+}

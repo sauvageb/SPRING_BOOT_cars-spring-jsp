@@ -1,0 +1,98 @@
+/*-------------------------------------------------------*/
+/* Form Elements
+/*-------------------------------------------------------*/
+
+input,
+select,
+textarea {
+  height: 38px;
+  border: 1px solid $border-color;
+  background-color: rgba(255,255,255,0.2);
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 0 16px;
+  @include transition(border-color .3s ease-in-out, background-color .3s ease-in-out)
+  color: $text-color;
+  font-size: 14px;
+}
+
+input[type=search] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+textarea#comment {
+  height: 180px;
+  padding: 8px 16px;
+}
+
+#contact-form input[type="text"]:focus,
+#contact-form input[type="email"]:focus,
+#contact-form textarea:focus {
+  border-color: #fff;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+  border-color: $heading-color;
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+  color: #fff;
+  border-color: transparent; 
+}
+
+#contact-form input::-webkit-input-placeholder,
+#contact-form textarea::-webkit-input-placeholder {
+  color: #fff;
+}
+
+#contact-form input:-moz-placeholder,
+#contact-form textarea:-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+#contact-form input::-moz-placeholder,
+#contact-form textarea::-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+#contact-form input:-ms-input-placeholder,
+#contact-form textarea:-ms-input-placeholder {
+  color: #fff;
+}
+
+#contact-form .message {
+  height: 50px;
+  width: 100%;
+  font-size: 13px;
+  line-height: 50px;
+  text-align: center;
+  float: none;
+  margin-top: 20px;
+  display: none;
+  color: #fff;
+}
+
+#contact-form .message.error { background-color: #f44336; }
+#contact-form .message.success { background-color: #4CAF50; }

@@ -1,0 +1,116 @@
+/*-------------------------------------------------------*/
+/* Accordions & Toggles
+/*-------------------------------------------------------*/
+
+.accordion {
+
+  &-panel {
+    margin-top: 5px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  } 
+
+  &-panel__heading {
+    position: relative;
+    background-color: $bg-light;
+    padding: 0;
+    @include transition (all .1s ease-in-out);
+
+
+    a:hover {
+      background-color: $main-color;
+      border-color: transparent;
+      color: #fff;
+    }
+
+    a.plus:hover > span {
+      background-color: #fff;
+    }
+
+    & > a.minus {
+      color: $main-color;
+      background-color: #fff;
+      border: 1px solid $border-color;
+    }
+
+    & > a > span {
+      display: block;
+      width: 12px;
+      height: 2px;
+      background-color: $main-color;
+      right: 18px;
+      top: 22px;
+      position: absolute;
+    }
+
+    & > a.plus > span {
+      background-color: $text-color;
+    }
+
+    & > a.plus > span:after {
+      content: "";
+      display: block;
+      width: 12px;
+      height: 2px;
+      position: absolute;
+      top: 0;
+      background-color: inherit;
+      @include transform (rotate(-90deg));
+    }
+  }   
+}
+
+
+.accordion-panel__body,
+.toggle-panel__body {
+  border: 1px solid $border-color;
+  border-top-color: transparent;
+  padding: 20px;
+}
+
+.accordion-panel__heading > a,
+.toggle-panel > a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  padding: 13px 20px;
+  color: $heading-color;
+  font-family: $heading-font;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  border: 1px solid $border-color;
+  border-radius: 3px;
+  @include transition (all .1s ease-in-out);
+}
+
+.accordion-panel__heading > a {
+  border: 1px solid $border-color;
+}
+
+.toggle-panel > a {
+  border-bottom: 1px solid $border-color;
+  padding: 14px 0;
+
+  &:after {
+    font-family: "ui-icons";
+    position: absolute;
+    content: "\e802";
+    right: 0;
+    top: 12px;
+    color: $text-color;
+    font-size: 18px;
+  }
+
+  &.active:after {
+    content: "\e809";
+    color: $heading-color;
+  }
+}
+
+.toggle-panel__body {
+  padding: 20px 0 10px;
+  border: none;
+}

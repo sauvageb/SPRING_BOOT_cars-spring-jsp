@@ -1,0 +1,54 @@
+/*-------------------------------------------------------*/
+/* Pricing Tables
+/*-------------------------------------------------------*/
+
+.pricing {
+  background-color: $bg-light;
+  text-align: center;
+  padding: 50px 40px;
+  margin-bottom: 30px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  &__title {
+    font-size: 16px;
+    margin-bottom: 17px;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  &__price-holder {
+    font-size: 50px;
+    color: #333;
+    display: inline-block;
+    line-height: 1.3;
+    margin-top: 12px;
+    font-family: $heading-font;
+  }
+  
+  &__currency {
+    display: inline-block;
+    vertical-align: top;
+    margin: 12px -15px 0 0px;
+    font-size: 34px;
+  }
+
+  &__term {
+    font-size: 13px;
+    display: block;
+    color: $text-color;
+  }
+
+  &__features {
+    color: $text-color;
+  }
+
+  &__features li {
+    padding: 10px 0;
+    font-size: 15px;
+  }
+
+  &__button {
+    margin-top: 38px;
+  }
+}

@@ -1,0 +1,232 @@
+/*-------------------------------------------------------*/
+/* Buttons
+/*-------------------------------------------------------*/
+
+.section-buttons .btn {
+  margin-bottom: 20px;
+}
+
+.btn {
+  font-family: $heading-font;
+  font-weight: 700;
+  overflow: hidden;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.14em;
+  border-radius: 3px;
+  border: none;
+  @include transition(all .2s ease-in-out);
+  color: #fff;
+  background-color: $heading-color;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:hover {
+    color: #fff;
+    opacity: .9;
+    border-color: transparent;
+  }
+
+  &:focus {
+    outline: none;
+    color: #fff;
+  }
+
+  &-lg,
+  &-lg.btn-button {
+    font-size: 13px;
+    padding: 0 34px;    
+    line-height: 46px;
+  }
+
+  &-lg.btn-button {
+    height: 46px;
+  }
+
+  &-md,
+  &-md.btn-button {
+    font-size: 12px;
+    padding: 0 27px;
+    line-height: 40px;    
+  }
+
+  &-md.btn-button {
+    height: 40px;
+  }
+
+  &-sm,
+  &-sm.btn-button {
+    font-size: 11px;
+    padding: 0 20px;
+    line-height: 30px;    
+  }
+
+  &-sm.btn-button {
+    height: 30px;
+  }
+
+  &-color {
+    background-color: $main-color;
+  }
+
+  &-transparent {
+    background-color: transparent;
+    border: 2px solid #fff;
+  }
+
+  &-stroke {
+    color: $heading-color;
+    border: 2px solid $border-color;
+    background-color: transparent;
+  }
+
+  &-dark {
+    background-color: $heading-color;
+  }
+
+  &-white {
+    background-color: #fff;
+    color: $heading-color;
+  }
+
+  &-light {
+    background-color: $bg-light;
+    color: $heading-color;
+  }
+
+  &-violet { background-color: #9c55d2; }
+  &-blue { background-color: #14b8ee; }
+  &-red { background-color: #f34937; }
+  &-yellow { background-color: #ee9e13; }
+  &-orange { background-color: $main-color; }
+  &-green { background-color: #50ba22; }
+  &-gold { background-color: #a18c67; }
+  &-pink { background-color: #d744a5; }
+
+  
+  &-white:focus,
+  &-stroke:focus,
+  &-transparent:focus,
+  &-light:focus {
+    color: $heading-color;
+  }
+
+  &-stroke:hover,
+  &-dark:hover,
+  &-white:hover,
+  &-white:hover,
+  &-light:hover,
+  &-transparent:hover {
+    background-color: $main-color;
+    border-color: transparent;
+  }
+
+  &-lg.btn-stroke,
+  &-lg.btn-transparent {
+    line-height: 42px;
+  }
+
+  &-md.btn-stroke,
+  &-md.btn-transparent {
+    line-height: 36px;
+  }
+
+  &-sm.btn-stroke,
+  &-sm.btn-transparent {
+    line-height: 26px;
+  }  
+
+  &-icon span {
+    position: relative;
+    display: inline-block;
+    left: 0;
+    @include transition(left .2s ease-in-out, right .2s ease-in-out);
+  }
+
+  &-icon > i {
+    position: absolute;
+    left: auto;
+    font-size: 18px;
+    width: 36px;
+    line-height: 46px;
+    background-color: rgba(0,0,0,.05);
+    right: -36px;
+    top: 0;
+    text-align: center;
+    display: block;
+    border-radius: 0 3px 3px 0;
+    @include transition(left .2s ease-in-out, right .2s ease-in-out);
+  }
+
+  &-md.btn-icon > i {
+    line-height: 40px;
+    font-size: 14px;
+    width: 30px;
+  }
+
+  &-sm.btn-icon > i {
+    line-height: 30px;
+    font-size: 12px;
+    width: 24px;
+  }
+
+  &-icon:hover span {
+    left: -16px;
+  }
+
+  &-icon:hover i {
+    right: 0;
+  }
+
+  &-md.btn-icon:hover span {
+    left: -13px;
+  }
+
+  &-sm.btn-icon:hover span {
+    left: -10px;
+  }
+}
+
+
+.rounded,
+.rounded:before {
+  border-radius: 70px;
+}
+
+
+/* Input Buttons
+-------------------------------------------------------*/
+
+.btn-button {
+  border: none;
+  margin-bottom: 0;
+  width: auto;
+
+  &.btn-color,
+  &.btn-dark {
+    color: #fff;
+  }
+
+  &.btn-wide {
+    width: 100%;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: .9;
+    color: #fff;
+  }
+}

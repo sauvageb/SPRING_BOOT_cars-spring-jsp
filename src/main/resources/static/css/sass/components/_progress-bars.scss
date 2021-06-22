@@ -1,0 +1,50 @@
+/*-------------------------------------------------------*/
+/* Progress Bars
+/*-------------------------------------------------------*/
+
+.progress {
+
+  &__bar {
+    width: 0;
+    @include transition(width 1.5s ease-in-out);
+  }
+
+  &__title,
+  &__percent {
+    color: $heading-color;
+    font-family: $heading-font;
+    font-size: 13px;
+    margin-top: 0;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  &__percent {
+    float: right;
+  }
+
+  &__base { 
+    height: 5px;
+    position: relative;
+    background: $bg-light;
+    margin-bottom: 25px;
+  }
+
+  &__bar {
+    display: block;
+    height: 5px;
+    position: relative;
+    overflow: hidden;
+    background-color: $main-color;
+  }
+}
+
+.progress__bar.progress__bar--blue { background-color: #14b8ee; }
+.progress__bar.progress__bar--red { background-color: #f34937; }
+.progress__bar.progress__bar--violet {  background-color: #9c55d2; }
+.progress__bar.progress__bar--green {  background-color: #50ba22; }
+.progress__bar.progress__bar--gold {  background-color: #a18c67; }
+.progress__bar.progress__bar--pink {  background-color: #d744a5; }
+.progress__bar.progress__bar--orange {  background-color: #f36b21; }
+.progress__bar.progress__bar--yellow {  background-color: #ee9e13; }

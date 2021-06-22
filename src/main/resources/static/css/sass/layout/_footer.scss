@@ -1,0 +1,68 @@
+/*-------------------------------------------------------*/
+/* Footer
+/*-------------------------------------------------------*/
+
+.footer {
+
+  &__widgets {
+    padding: 120px 0 60px;
+
+    p {
+      font-size: 15px;
+      line-height: 30px;
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $text-color;
+    }
+
+    a:hover {
+      color: $heading-color;
+    }
+  }
+
+  @include bp-md-down {
+    .widget {
+      text-align: center;
+    }
+  }
+}
+
+
+.widget {
+  margin-bottom: 60px;
+
+  &__title {
+    font-size: 16px;
+    margin-bottom: 41px;
+  }
+
+  &__footer-logo__link {
+    margin-bottom: 36px;
+    display: block;
+  }
+}
+
+
+
+/* Bottom Footer
+-------------------------------------------------------*/
+
+.footer-bottom {
+  padding: 24px 0;
+  border-top: 1px solid $border-color;
+}
+
+.copyright {
+  font-size: 13px;
+  line-height: 32px;
+
+  a {
+    color: $text-color;
+  }
+
+  a:hover {
+    color: $heading-color;
+  }
+}

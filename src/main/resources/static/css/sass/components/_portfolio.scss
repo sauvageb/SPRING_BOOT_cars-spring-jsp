@@ -1,0 +1,264 @@
+/*-------------------------------------------------------*/
+/* Portfolio
+/*-------------------------------------------------------*/
+
+.project-grid.grid-5-col .project { width: 20%; }
+.project-grid.grid-4-col .project { width: 25%; }
+.project-grid.grid-3-col .project { width: 33.33333333%; }
+.project-grid.grid-2-col .project { width: 50%; }
+.project-grid.small-gutter { margin-left: -4px; margin-right: -4px; }
+.project-grid.small-gutter .project { padding: 0 4px; margin-bottom: 8px; }
+.project-grid.gutter { margin-left: -15px; margin-right: -15px;}
+.project-grid.gutter .project { padding: 0 15px; margin-bottom: 30px; }
+
+
+/*-------------------------------------------------------*/
+/* Featured Works (Slider)
+/*-------------------------------------------------------*/
+
+.owl-featured-works .project {
+  margin: 0 4px;
+  padding: 0;
+}
+
+.owl-featured-works--grab .project {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: -o-grab;
+  cursor: -ms-grab;
+  cursor: grab;
+}
+
+.project {
+  overflow: hidden;
+  display: block;
+  position: relative;
+
+  &__img-holder {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__img {
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.7);
+    @include transition($all);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  &__overlay {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+    background-color: rgba(0,0,0,0.7);
+    @include transition($all);
+
+    .project__title,
+    .project__category {
+      color: #fff;
+    }
+  }
+
+  &__icons {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: -20px;
+    @include transition($all);
+  }
+
+  &__icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    margin: 0 3px;
+    line-height: 40px;
+    text-align: center;
+    color: #333333;
+    background-color: #fff;
+    border-radius: 100px;
+    @include transition($all);
+  }
+
+  &__icons a:hover {
+    color: #fff;
+    background-color: $main-color;
+  }
+
+  &:hover .project__overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &--hover-1:hover .project__icons {
+    top: 42%;
+  }
+
+  &__description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    @include transition($all);
+  }
+
+  &--hover-1:hover .project__description {
+    bottom: 42%;
+    @include transform(translateY(50%));
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 16px;
+
+    &:hover a {
+      color: $main-color;
+    }
+  }
+
+  &__category {
+    font-size: 13px;
+    font-style: italic;
+
+    a {
+      color: inherit;
+    }
+
+    &:hover a {
+      color: $main-color;
+    }
+  }
+}
+
+
+
+/*-------------------------------------------------------*/
+/* Portfolio
+/*-------------------------------------------------------*/
+
+/* Filter
+-------------------------------------------------------*/
+.project-filter {
+  list-style: none;
+  margin-bottom: 40px;
+  cursor: default;
+  font-size: 13px;
+
+  a {
+    display: inline-block;
+    margin-right: 5px;
+    color: $text-color;
+    text-decoration: none;
+    padding: 7px 15px;
+    border-radius: 3px;
+    background-color: #fff;
+  }
+
+  a.active,
+  a:hover,
+  a:focus {
+    color: $main-color;
+  }  
+}
+
+
+/* Hover 2
+-------------------------------------------------------*/
+
+.project--hover-2 {
+
+  .project__description {
+    padding: 13px 20px;
+    background-color: #fff;
+    display: block;
+    left: 0;
+    bottom: auto;
+    top: auto;
+    text-align: left;
+    @include transform(translateY(100%));
+    z-index: 2;
+  }
+
+  .project__title {
+    font-size: 14px;
+    margin-bottom: 0;
+    line-height: 1.3;
+  }
+
+  &:hover .project__description {
+    @include transform(translateY(-100%));
+    bottom: auto;
+  }
+
+  &:hover .project__img {
+    @include transform(translateY(-30px));
+  }
+
+  &:hover .project__icons {
+    top: 42%;
+  }
+}
+
+
+/* Hover 3
+-------------------------------------------------------*/
+
+.project--hover-3 {
+  
+  .project__description {
+    top: 50%;
+    bottom: auto;
+    @include transform(translateY(20px));
+  }
+
+  &:hover .project__description {
+    @include transform(translateY(-50%));
+  }
+
+}
+
+
+/*-------------------------------------------------------*/
+/* Portfolio Responsive Styles
+/*-------------------------------------------------------*/
+
+@include bp-md-down {
+  .project-grid.grid-5-col .project,
+  .project-grid.grid-4-col .project {
+    width: 33.3333%;
+  }
+}
+
+@include bp-sm-down {  
+  .project-grid.grid-5-col .project,
+  .project-grid.grid-4-col .project,
+  .project-grid.grid-3-col .project {
+    width: 50%;
+  }
+}
+
+@include bp-xs-down {
+  .project-grid .project {
+    width: 100% !important;
+  }
+
+  .project-filter a {
+    display: block;
+    margin-top: 8px; 
+    margin-right: 0; 
+  } 
+}

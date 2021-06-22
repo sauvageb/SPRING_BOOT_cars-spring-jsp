@@ -1,0 +1,58 @@
+/*-------------------------------------------------------*/
+/* Social Icons
+/*-------------------------------------------------------*/
+
+.socials {
+
+  a {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    background-color: $bg-light;
+    color: #a7a7a7;
+    border-radius: 3px;
+    text-align: center;
+    overflow: hidden;
+    font-size: 14px;
+    @include transition (all .1s ease-in-out);
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &--nobase a {
+    width: 13px;
+    height: auto;
+    margin-left: 20px;
+    color: #bababa;
+    background-color: transparent;
+
+    &:hover {
+      color: $main-color;
+      background-color: transparent !important;
+    }
+  }
+
+  &--white a {
+    color: #fff;
+  }
+
+  &--lg a {
+    font-size: 17px;
+  }
+ 
+  &--rounded a {
+    border-radius: 50%;
+  }
+
+}
+
+.socials .facebook:hover { background-color: #3b5998; }
+.socials .twitter:hover { background-color: #00acee; }
+.socials .google-plus:hover { background-color: #dd4b39; }
+.socials .envelope:hover { background-color: #009688; }
+.socials .linkedin:hover { background-color: #0e76a8; }
+.socials .pinterest:hover { background-color: #c8232c; }
+.socials .instagram:hover { background-color: #3f729b; }
